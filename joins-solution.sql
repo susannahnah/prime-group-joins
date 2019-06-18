@@ -25,13 +25,14 @@
 -- WHERE "products"."description"='diet pepsi';
 
 5. Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
--- SELECT "quantity", "first_name", "last_name" FROM "line_items"
+-- SELECT "first_name", "last_name", COUNT("orders"."id") FROM "line_items"
 -- JOIN "orders"
 -- ON "orders"."id"="line_items"."order_id"
 -- JOIN "addresses"
 -- ON "addresses"."id"="orders"."address_id"
 -- JOIN "customers"
--- ON "customers"."id"="addresses"."id";
+-- ON "customers"."id"="addresses"."id"
+-- GROUP BY "customers"."first_name", "customers"."last_name";
 
 
 6. How many customers do we have?
